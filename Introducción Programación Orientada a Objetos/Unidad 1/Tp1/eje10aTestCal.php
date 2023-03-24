@@ -1,5 +1,5 @@
 <?php
-    include 'calculadora.php';
+    include 'eje10aCalculadora.php';
 
     echo "Ingrese en simbolos la operacion que desea realizar:";
     $oper = trim(fgets(STDIN));
@@ -10,3 +10,4 @@
     $casio = new Calculadora ($numA, $numB, $oper);
     $resultado = $casio -> operaciones($numA, $numB, $oper);
     echo $resultado;
+   
