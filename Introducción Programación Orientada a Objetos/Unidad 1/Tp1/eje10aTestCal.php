@@ -8,6 +8,6 @@
     echo "Ingrese el segundo numero que desea " . $oper . ":";
     $numB = trim(fgets(STDIN));
     $casio = new Calculadora ($numA, $numB, $oper);
-    $resultado = $casio -> operaciones($numA, $numB, $oper);
+    $resultado = $casio -> operaciones();
     echo $resultado;
    

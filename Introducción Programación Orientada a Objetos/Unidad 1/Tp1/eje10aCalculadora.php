@@ -36,7 +36,7 @@ class Calculadora {
         $this -> operacion = $nuevaOpe;
     }
 
-    public function operaciones($num1, $num2, $operacion) {
+    public function operaciones() {
         if ($this -> getOperacion() == "+") {
             $resultado = $this -> getNum1() + $this -> getNum2();
         }
