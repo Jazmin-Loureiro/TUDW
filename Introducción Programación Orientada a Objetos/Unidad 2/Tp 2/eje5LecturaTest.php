@@ -23,37 +23,45 @@ $autor4 = new persona("dario", "loureiro", "dni", "22521244");
 
 $libro4 = new Libro("1111", "Pesca en rios", "1995", "Logo", $autor4, "170", "pppppppppppppppppppppppppppppppppp");
 
-//
+//libro5
+$autor5 = new persona("silvana", "yensen", "dni", "2569984");
 
-//array Libros
-$coleccionLibros = [];
+$libro5 = new Libro("1411", "Telenovelas", "1972", "planeta", $autor5, "300", "ssssssssssssssssssssssssssssssssssssssss");
 
-$coleccionLibros [0] ["libro1"] = $libro1;
-$coleccionLibros [0] ["estadoLectura"] = 
+//libro6
+$autor6 = new persona("lucas", "loureiro", "dni", "46029980");
 
-$coleccionLibros [1] ["libr02"] = $libro2;
-$coleccionLibros [1] ["estadoLectura"] = 
+$libro6 = new Libro("2504", "cumple", "2005", "Logo", $autor6, "100", ";llllllllllllllllllll;ljlkkkkkkl");
 
-$coleccionLibros [2] ["libro3"] = $libro3;
-$coleccionLibros [2] ["estadoLectura"] = 
+//array LibrosLeidos
+$coleccionLeidos = [];
 
-$coleccionLibros [3] ["libro1"] = $libro4;
-$coleccionLibros [3] ["estadoLectura"] = 
+$coleccionLeidos [0] = $libro1;
+$coleccionLeidos [1] = $libro2;
+$coleccionLeidos [2] = $libro3;
+$coleccionLeidos [3] = $libro4;
+$coleccionLeidos [4] = $libro5;
 
+$lectura = new lectura1($libro6, 99, $coleccionLeidos);
 
-//creacion de la clase
-$lectura = new Lectura($coleccionLibros);
+$leido = $lectura -> estado($libro6);
 
+if ($leido == "true") {
+    echo "\nleido";
+}
+else {
+    echo "\nno leido";
+}
 
-//prueba de los metodos
-$siguientePagina = $lectura -> siguientePagina();
+$pagAct = $lectura -> siguientePagina();
 
-echo $lectura;
+$leido = $lectura -> estado($libro6);
 
-$paginaAnterior = $lectura -> retrocederPagina();
+if ($leido == "true") {
+    echo "\nleido\n";
+}
+elseif ($leido = "false") {
+    echo "\nno leido\n";
+}
 
-echo $lectura;
-
-$nuevaPagina = $lectura -> irPagina("70");
-
-echo $lectura;
+echo $sinopsisLibro = $lectura -> darSinopsis($libro5);
