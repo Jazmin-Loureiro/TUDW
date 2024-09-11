@@ -13,10 +13,13 @@ include (STRUCTURE_PATH."cabecera.php");
                 <?php
                 $datos = data_submitted();
                 if ($datos) {
-                    $controlAuto = new AbmAuto();
-                    $respAuto = $controlAuto->buscar($datos['patente']);
-                    $controlPersona = new AbmPersona();
-                    $respPersona = $controlPersona->buscar($datos['nroDni']);
+                    $nuevosDatos = array();
+                    $nuevosDatos = $respAuto[0] -> getPatente();
+                    $nuevosDatos = $respAuto[0] -> getMarca();
+                    $nuevosDatos = $respAuto[0] -> getModelo();
+                    $respAuto[0] -> setDniDuenio($respPersona[0] -> getNroDni());
+                    $nuevosDatos = $respAuto[0] -> getDniDuenio();
+                    $resp = $controlAuto->modificacion($nuevosDatos); 
     
                     if ($respAuto && $respPersona) {
                         $nuevosDatos = array();
