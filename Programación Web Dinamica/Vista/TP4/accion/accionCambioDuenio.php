@@ -21,7 +21,7 @@ include (STRUCTURE_PATH."cabecera.php");
                     if ($respAuto && $respPersona) {
                         $nuevosDatos = array();
                         $nuevosDatos = $respAuto[0];
-                        $nuevosDatos['dniDuenio'] = $respPersona[0]['nroDni'];
+                        $nuevosDatos['dniDuenio'] = $respPersona[0] -> getNroDni();
                         $resp = $controlAuto->modificacion($nuevosDatos); 
                         
                         if($resp){
